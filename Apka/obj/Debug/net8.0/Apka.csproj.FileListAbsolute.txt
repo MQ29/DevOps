@@ -1,0 +1,14 @@
+/home/edmund/projects/DevOps/Apka/bin/Debug/net8.0/Apka
+/home/edmund/projects/DevOps/Apka/bin/Debug/net8.0/Apka.deps.json
+/home/edmund/projects/DevOps/Apka/bin/Debug/net8.0/Apka.runtimeconfig.json
+/home/edmund/projects/DevOps/Apka/bin/Debug/net8.0/Apka.dll
+/home/edmund/projects/DevOps/Apka/bin/Debug/net8.0/Apka.pdb
+/home/edmund/projects/DevOps/Apka/obj/Debug/net8.0/Apka.GeneratedMSBuildEditorConfig.editorconfig
+/home/edmund/projects/DevOps/Apka/obj/Debug/net8.0/Apka.AssemblyInfoInputs.cache
+/home/edmund/projects/DevOps/Apka/obj/Debug/net8.0/Apka.AssemblyInfo.cs
+/home/edmund/projects/DevOps/Apka/obj/Debug/net8.0/Apka.csproj.CoreCompileInputs.cache
+/home/edmund/projects/DevOps/Apka/obj/Debug/net8.0/Apka.dll
+/home/edmund/projects/DevOps/Apka/obj/Debug/net8.0/refint/Apka.dll
+/home/edmund/projects/DevOps/Apka/obj/Debug/net8.0/Apka.pdb
+/home/edmund/projects/DevOps/Apka/obj/Debug/net8.0/Apka.genruntimeconfig.cache
+/home/edmund/projects/DevOps/Apka/obj/Debug/net8.0/ref/Apka.dll
