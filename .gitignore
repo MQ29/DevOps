@@ -1,0 +1,30 @@
+# Pliki tymczasowe Visual Studio
+.vs/
+*.user
+
+# Foldery binarne i kompilowane
+bin/
+obj/
+
+# Pliki migracji EF Core (opcjonalnie, jeśli tworzysz je automatycznie)
+Migrations/
+
+# Pliki logów
+*.log
+
+# Lokalne konfiguracje środowiska
+appsettings.Development.json
+
+# Wygenerowane cache i metadane
+*.cache
+*.vsidx
+*.nuget.*
+
+# Wszystkie inne pliki specyficzne dla projektu
+*.pdb
+*.exe
+*.dll
+*.json
+
+# Pliki Razor CSS wygenerowane automatycznie
+scopedcss/
