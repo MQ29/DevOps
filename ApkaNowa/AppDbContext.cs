@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApkaNowa.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApkaNowa
 {
@@ -20,11 +21,5 @@ namespace ApkaNowa
                 new User { Id = 2, Name = "User1" }
             );
         }
-    }
-
-    public class User
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
     }
 }

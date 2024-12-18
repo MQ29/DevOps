@@ -8,17 +8,29 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Kopiowanie pliku projektu i przywracanie zale¿noœci
+# Przywracanie zale¿noœci
 COPY ["ApkaNowa.csproj", "./"]
 RUN dotnet restore "./ApkaNowa.csproj"
 
-# Kopiowanie pozosta³ych plików projektu i budowanie aplikacji
-COPY . .
-WORKDIR "/src"
+# Kopiowanie kodu Ÿród³owego
+COPY . . 
+
+# Publikacja aplikacji
 RUN dotnet publish "./ApkaNowa.csproj" -c Release -o /app/publish
 
-# Etap koñcowy (final image)
-FROM base AS final
+# Etap koñcowy (runtime environment z SDK i narzêdziami)
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS final
 WORKDIR /app
+
+# Instalacja dotnet-ef CLI
+RUN dotnet tool install --global dotnet-ef
+
+# Dodanie œcie¿ki dla narzêdzi dotnet
+ENV PATH="$PATH:/root/.dotnet/tools"
+
+# Kopiowanie opublikowanej aplikacji z etapu build
 COPY --from=build /app/publish .
+COPY ["ApkaNowa.csproj", "./"]  # Dodanie pliku .csproj dla dotnet-ef
+
+# Uruchomienie aplikacji
 ENTRYPOINT ["dotnet", "ApkaNowa.dll"]
