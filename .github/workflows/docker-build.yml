@@ -17,6 +17,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    # Instalacja docker-compose
+    - name: Install docker-compose
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker-compose
+
     # Budowanie obrazu Dockerowego
     - name: Build Docker Image
       run: docker-compose -f docker-compose.yml build app
