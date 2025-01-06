@@ -6,9 +6,6 @@
 bin/
 obj/
 
-# Pliki migracji EF Core (opcjonalnie, jeśli tworzysz je automatycznie)
-Migrations/
-
 # Pliki logów
 *.log
 
