@@ -30,7 +30,6 @@ ENV PATH="$PATH:/root/.dotnet/tools"
 
 # Kopiowanie opublikowanej aplikacji z etapu build
 COPY --from=build /app/publish .
-COPY ["ApkaNowa.csproj", "./"]  # Dodanie pliku .csproj dla dotnet-ef
 
 # Uruchomienie aplikacji
 ENTRYPOINT ["dotnet", "ApkaNowa.dll"]
