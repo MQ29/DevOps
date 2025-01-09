@@ -1,13 +1,14 @@
 ﻿@using ApkaNowa.Models
 @model List<User>
 
-<h1>Test</h1>
+<h1>Lista Użytkowników</h1>
 
 <table class="table">
     <thead>
         <tr>
             <th>Id</th>
             <th>Imię</th>
+            <th>Akcje</th>
         </tr>
     </thead>
     <tbody>
@@ -16,7 +17,12 @@
             <tr>
                 <td>@user.Id</td>
                 <td>@user.Name</td>
+                <td>
+                    <a href="@Url.Action("Delete", "Home", new { id = user.Id })" class="btn btn-danger">Usuń</a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
+<a href="@Url.Action("Create", "Home")" class="btn btn-primary">Dodaj Użytkownika</a>

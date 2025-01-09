@@ -1,5 +1,6 @@
 using ApkaNowa.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ApkaNowa.Controllers
@@ -10,6 +11,34 @@ namespace ApkaNowa.Controllers
         {
             var users = dbContext.Users.ToList();
             return View(users);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                dbContext.Users.Add(user);
+                dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(user);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var user = dbContext.Users.Find(id);
+            if (user != null)
+            {
+                dbContext.Users.Remove(user);
+                dbContext.SaveChanges();
+            }
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

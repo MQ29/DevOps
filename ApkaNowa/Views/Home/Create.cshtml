@@ -1,0 +1,12 @@
+﻿@model User
+
+<h1>Dodaj Użytkownika</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Name">Imię</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Dodaj</button>
+</form>
